@@ -30,6 +30,7 @@
     "coffee-script": "^1.9.3",
     "consolidate": "^0.13.1",
     "express": "^4.13.1",
+    "front-matter": "^1.0.0",
     "haml-coffee": "^1.14.1",
     "pagedown": "^1.1.0",
     "pagedown-extra": "git+https://github.com/jmcmanus/pagedown-extra.git",

@@ -5,6 +5,7 @@ extra      = require('pagedown-extra').Extra
 fs         = require('fs')
 path       = require('path')
 cons       = require('consolidate')
+fm         = require('front-matter')
 
 converter = new pagedown.Converter()
 extra.init(converter, {highlighter: "highlight"});
@@ -22,9 +23,12 @@ app.use '/', (req, res, next) ->
       if err
         next()
       else
-        content = converter.makeHtml(data)
+        data = fm(data);
 
-        hamlc __dirname + '/templates/default/single.hamlc', { content: content }, (err, data) ->
+        page = data.attributes
+        page.content = converter.makeHtml(data.body)
+
+        hamlc __dirname + '/templates/default/single.hamlc', page, (err, data) ->
           if err
             return next(err)
           else
