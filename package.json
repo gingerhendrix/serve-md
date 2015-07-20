@@ -6,8 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "bin" : {
-    "serve" : "bin/serve"
+  "bin": {
+    "serve": "bin/serve"
   },
   "repository": {
     "type": "git",
@@ -29,6 +29,7 @@
   "dependencies": {
     "coffee-script": "^1.9.3",
     "express": "^4.13.1",
+    "pagedown": "^1.1.0",
     "serve-index": "^1.7.1"
   }
 }
