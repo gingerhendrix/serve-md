@@ -28,7 +28,9 @@
   "homepage": "https://github.com/gingerhendrix/serve#readme",
   "dependencies": {
     "coffee-script": "^1.9.3",
+    "consolidate": "^0.13.1",
     "express": "^4.13.1",
+    "haml-coffee": "^1.14.1",
     "pagedown": "^1.1.0",
     "serve-index": "^1.7.1"
   }

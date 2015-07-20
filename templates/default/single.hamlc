@@ -1,0 +1,13 @@
+!!!
+%html
+  %head
+    %link{rel: "stylesheet", href: "/templates/default/vendor/github-markdown.css"}
+    %link{rel: "stylesheet", href: "/templates/default/style.css"}
+    %link{rel: "stylesheet", href: "//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/styles/solarized_dark.min.css"}
+  
+    %script{src: "//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/highlight.min.js"}
+    %script{src: 'https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML'}
+
+  %body
+    .content.markdown-body
+      != @content
