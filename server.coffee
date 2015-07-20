@@ -1,11 +1,14 @@
 express    = require('express')
 serveIndex = require('serve-index')
 pagedown   = require('pagedown')
+extra      = require('pagedown-extra').Extra
 fs         = require('fs')
 path       = require('path')
 cons       = require('consolidate')
 
 converter = new pagedown.Converter()
+extra.init(converter, {highlighter: "highlight"});
+
 hamlc = cons['haml-coffee']
 
 app = express()
