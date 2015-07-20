@@ -14,16 +14,10 @@ Serve documents as a local website.
 
 ## Roadmap
 
-v 0.0.1
+#### In Progress
 
-* Express server with static file support
-
-v 0.0.2
-
-* Directory listings
-
-v 0.0.3
-
+* Express server with static file support (Done)
+* Directory listings (Done)
 * Markdown conversion
 
 v 0.0.4

@@ -6,6 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "bin" : {
+    "serve" : "bin/serve"
+  },
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/gingerhendrix/serve.git"
@@ -22,5 +25,10 @@
   "bugs": {
     "url": "https://github.com/gingerhendrix/serve/issues"
   },
-  "homepage": "https://github.com/gingerhendrix/serve#readme"
+  "homepage": "https://github.com/gingerhendrix/serve#readme",
+  "dependencies": {
+    "coffee-script": "^1.9.3",
+    "express": "^4.13.1",
+    "serve-index": "^1.7.1"
+  }
 }
