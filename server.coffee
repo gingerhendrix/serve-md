@@ -11,6 +11,23 @@ coffee     = require('coffee-script')
 converter = new pagedown.Converter()
 extra.init(converter, {highlighter: "highlight"});
 
+converter.hooks.chain "preConversion",  (text) ->
+  matches = text.match /!include\([^)]*\)/g
+
+  for match in matches
+    includePath = match.match(/\(([^)]*)\)/)[1]
+    #console.log "Include #{match} - #{includePath}"
+    try
+      data = fs.readFileSync "#{baseDir}/_#{includePath}.latex", 'utf8'
+    catch e
+      console.log "Error", e
+
+    if data?
+      #console.log "Data", data
+      text = text.replace match, data
+
+  text
+
 hamlc = cons['haml-coffee']
 
 app = express()
