@@ -6,6 +6,7 @@ fs         = require('fs')
 path       = require('path')
 cons       = require('consolidate')
 fm         = require('front-matter')
+coffee     = require('coffee-script')
 
 converter = new pagedown.Converter()
 extra.init(converter, {highlighter: "highlight"});
@@ -33,6 +34,14 @@ app.use '/', (req, res, next) ->
             return next(err)
           else
             res.send data
+
+  else if path.extname(req.path) is '.coffee'
+    fs.readFile baseDir + req.path, 'utf8', (err, data) ->
+      if err
+        next()
+      else
+        res.send coffee.compile(data)
+
   else
     next()
 

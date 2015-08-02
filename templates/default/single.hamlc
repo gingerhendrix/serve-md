@@ -4,12 +4,14 @@
     %link{rel: "stylesheet", href: "/templates/default/vendor/github-markdown.css"}
     %link{rel: "stylesheet", href: "/templates/default/style.css"}
     %link{rel: "stylesheet", href: "//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/styles/solarized_dark.min.css"}
-    - for style in @stylesheets
+    - for style in (@stylesheets || [])
       %link{rel: "stylesheet", href: style}
 
+    %script{src: 'https://code.jquery.com/jquery-2.1.4.min.js'}
     %script{src: "//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/highlight.min.js"}
     %script{src: 'https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML'}
-    - for js in @javascripts
+    - for js in (@javascripts || [])
+
       %script{src: js}
 
     %title
