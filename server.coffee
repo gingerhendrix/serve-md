@@ -12,7 +12,7 @@ converter = new pagedown.Converter()
 extra.init(converter, {highlighter: "highlight"});
 
 converter.hooks.chain "preConversion",  (text) ->
-  matches = text.match /!include\([^)]*\)/g
+  matches = text.match(/!include\([^)]*\)/g) || []
 
   for match in matches
     includePath = match.match(/\(([^)]*)\)/)[1]
@@ -32,7 +32,10 @@ hamlc = cons['haml-coffee']
 
 app = express()
 app.port = process.env.PORT || 3000
-baseDir = process.cwd()
+baseDir = process.argv[2] || '.'
+baseDir = path.resolve(process.cwd(), baseDir)
+
+console.log "Serving #{baseDir}"
 
 app.use '/', (req, res, next) ->
   if path.extname(req.path) is '.md'
@@ -62,8 +65,8 @@ app.use '/', (req, res, next) ->
   else
     next()
 
-app.use '/', serveIndex(process.cwd(), 'icons': true)
-app.use '/', express.static(process.cwd())
+app.use '/', serveIndex(baseDir, 'icons': true)
+app.use '/', express.static(baseDir)
 
 app.use '/templates/default', express.static(__dirname + '/templates/default/assets')
 
