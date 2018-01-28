@@ -9,7 +9,7 @@
 
     %script{src: 'https://code.jquery.com/jquery-2.1.4.min.js'}
     %script{src: "//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/highlight.min.js"}
-    %script{src: 'https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML'}
+    %script{src: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_HTML'}
     - for js in (@javascripts || [])
 
       %script{src: js}

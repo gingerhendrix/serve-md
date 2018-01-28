@@ -27,13 +27,13 @@
   },
   "homepage": "https://github.com/gingerhendrix/serve#readme",
   "dependencies": {
-    "coffee-script": "^1.9.3",
+    "coffee-script": "^1.12.7",
     "consolidate": "^0.13.1",
-    "express": "^4.13.1",
+    "express": "^4.16.2",
     "front-matter": "^1.0.0",
     "haml-coffee": "^1.14.1",
     "pagedown": "^1.1.0",
     "pagedown-extra": "git+https://github.com/jmcmanus/pagedown-extra.git",
-    "serve-index": "^1.7.1"
+    "serve-index": "^1.9.1"
   }
 }
